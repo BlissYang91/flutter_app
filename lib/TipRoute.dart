@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'WidgetState.dart';
+
 class TipRoute extends StatelessWidget{
   final String text;
   //构造函数接受参数
@@ -32,7 +34,8 @@ class TipRoute extends StatelessWidget{
                   // 直接返回 AppBar的title
                   return (scaffold.appBar as AppBar).title;
                 }),
-              )
+              ),
+              ParentWidgetC()
             ],
           ),
         ),

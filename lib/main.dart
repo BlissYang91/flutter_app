@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/RouterTestRoute.dart';
 import 'package:english_words/english_words.dart';
+import 'WidgetState.dart';
 
 void main() {
   runApp(MyApp());
@@ -130,58 +131,3 @@ class Echo extends StatelessWidget{
 
 }
 
-// ParentWidget 为 TapboxB 管理状态.
-class ParentWidget extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() => new _ParentWidgetState();
-}
-
-class _ParentWidgetState extends State<ParentWidget>{
-  bool _active = false;
-
-  void _handleTapboxChanged(bool newValue){
-    setState(() {
-      _active = newValue;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-       child: TapboxB(onChanged: _handleTapboxChanged,active: _active,)
-    );
-  }
-
-}
-///TapboxB子widget
-class TapboxB extends StatelessWidget{
-  final bool active;
-  final ValueChanged<bool> onChanged;//值改变时候的回调方法
-
-  const TapboxB({Key key, this.active:false, @required this.onChanged}) : super(key: key);
-
-  void _handleTap(){
-    onChanged(!active);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new GestureDetector(
-      onTap: _handleTap,
-      child: new Container(
-        child: new Center(
-          child: Text(
-            active ? 'Active' :'Inactive',
-            style: TextStyle(fontSize: 32.0,color: Colors.white),
-          ),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: active ? Colors.lightGreen[700]:Colors.grey[600]
-        ),
-      ),
-    );
-  }
-
-}
