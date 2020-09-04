@@ -69,6 +69,17 @@ class NewRoute extends StatelessWidget{
                 ),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
                 onPressed: (){},
+              ),
+              Image(
+                image: AssetImage("images/icon_hint.png"),
+                width: 100.0,
+                height: 100.0,
+              ),
+              Image(
+                image: NetworkImage(
+                  "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",
+                ),
+                width: 100.0,
               )
             ],
           )
