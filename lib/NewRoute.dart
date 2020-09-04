@@ -57,7 +57,19 @@ class NewRoute extends StatelessWidget{
               //带图标的按钮
               RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.send), label: Text('发送')),
               OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text('添加')),
-              FlatButton.icon(onPressed: (){}, icon: Icon(Icons.info), label: Text('详情'))
+              FlatButton.icon(onPressed: (){}, icon: Icon(Icons.info), label: Text('详情')),
+              //自定义按钮外观
+              FlatButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue,
+                colorBrightness: Brightness.dark,
+                splashColor: Color(0x000000),
+                child: Text(
+                  'Submit'
+                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                onPressed: (){},
+              )
             ],
           )
         ),
