@@ -23,6 +23,15 @@ class TipRoute extends StatelessWidget{
               RaisedButton(
                 onPressed: () => Navigator.pop(context,"返回上一页"),
                 child: Text("返回"),
+              ),
+              //在子树中获取父级widget
+              Container(
+                child: Builder(builder: (context){
+                  //在Widget树中向上查找最近的父级`Scaffold` widget
+                  Scaffold scaffold = context.findAncestorWidgetOfExactType<Scaffold>();
+                  // 直接返回 AppBar的title
+                  return (scaffold.appBar as AppBar).title;
+                }),
               )
             ],
           ),

@@ -107,6 +107,10 @@ class RandomWordsWidget extends StatelessWidget{
 }
 
 ///Widget
+///widget的构造函数参数应使用命名参数，命名参数中的必要参数要添加@required标注，这样有利于静态代码分析器进行检查。
+///另外，在继承widget时，第一个参数通常应该是Key，
+///另外，如果Widget需要接收子Widget，那么child或children参数通常应被放在参数列表的最后。
+///同样是按照惯例，Widget的属性应尽可能的被声明为final，防止被意外改变。
 class Echo extends StatelessWidget{
   final String text;
   final Color backgroundColor;
