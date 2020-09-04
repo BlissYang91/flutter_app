@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 }));
               },
             ),
-            RandomWordsWidget() //添加组件
+            RandomWordsWidget(), //添加组件
+            Echo(text: "参数组件",)
           ],
         ),
       ),
@@ -100,6 +101,25 @@ class RandomWordsWidget extends StatelessWidget{
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: new Text(wordPair.toString()),
+    );
+  }
+
+}
+
+///Widget
+class Echo extends StatelessWidget{
+  final String text;
+  final Color backgroundColor;
+
+  const Echo({Key key, this.text,@required this.backgroundColor}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        color: backgroundColor,
+        child: Text(text),
+      ),
     );
   }
 
