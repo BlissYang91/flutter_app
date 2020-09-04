@@ -38,9 +38,26 @@ class NewRoute extends StatelessWidget{
                       color: Colors.blue
                     ),
                     // recognizer: _tapRecognizer //点击处理
-                  )
+                  ),
                 ]
-              ))
+              )),
+              RaisedButton(
+                child: Text('RaisedButton'),
+                onPressed: (){},
+              ),
+              //扁平按钮，默认背景透明并不带阴影
+              FlatButton(
+                child: Text('FlatButton'),
+                onPressed: (){},
+              ),
+              IconButton(
+                icon: Icon(Icons.thumb_down),
+                onPressed: (){},
+              ),
+              //带图标的按钮
+              RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.send), label: Text('发送')),
+              OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text('添加')),
+              FlatButton.icon(onPressed: (){}, icon: Icon(Icons.info), label: Text('详情'))
             ],
           )
         ),
